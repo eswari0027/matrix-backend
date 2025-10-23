@@ -2,18 +2,18 @@
 FROM maven:3.9.0-eclipse-temurin-17 AS build
 WORKDIR /app
 
-# Copy Maven files first for caching
-COPY pom.xml .
+# Copy Maven wrapper & pom first
 COPY mvnw .
 COPY .mvn .mvn
+COPY pom.xml .
 
-# Download dependencies
-RUN ./mvnw dependency:go-offline
+# Make mvnw executable
+RUN chmod +x mvnw
 
-# Copy the rest of the source code
+# Copy source code
 COPY src ./src
 
-# Package the app
+# Package the app (download dependencies automatically)
 RUN ./mvnw clean package -DskipTests
 
 # ===== Stage 2: Run the Spring Boot app =====
