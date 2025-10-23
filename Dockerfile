@@ -2,15 +2,12 @@
 FROM maven:3.9.0-eclipse-temurin-17 AS build
 WORKDIR /app
 
-# Copy Maven wrapper and POM
+# Copy Maven wrapper and POM first
 COPY mvnw mvnw.cmd pom.xml ./
 COPY .mvn .mvn
 
 # Make wrapper executable
-RUN chmod +x ./mvnw
-
-# Optional: copy settings.xml if you have mirrors
-# COPY settings.xml /root/.m2/settings.xml
+RUN chmod +x mvnw
 
 # Copy source code
 COPY src ./src
@@ -22,11 +19,11 @@ RUN ./mvnw clean package -DskipTests -B
 FROM eclipse-temurin:17-jdk
 WORKDIR /app
 
-# Copy the built jar from previous stage
+# Copy jar from build stage
 COPY --from=build /app/target/*.jar app.jar
 
 # Expose port
 EXPOSE 8081
 
-# Run the app
+# Run the Spring Boot app
 ENTRYPOINT ["java", "-jar", "app.jar"]
