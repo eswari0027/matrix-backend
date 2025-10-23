@@ -1,21 +1,16 @@
 package com.matrix.controller;
 
-import com.matrix.model.Contact;
-import com.matrix.repository.ContactRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/contact") // base path for contact endpoints
 @CrossOrigin(origins = "*")
 public class ContactController {
 
-    private final ContactRepository contactRepository;
-
-    @Autowired
-    public ContactController(ContactRepository contactRepository) {
-        this.contactRepository = contactRepository;
-    }
+    // In-memory list to store contacts
+    private final List<Contact> contacts = new ArrayList<>();
 
     // Health check for ContactController
     @GetMapping("/health")
@@ -29,6 +24,25 @@ public class ContactController {
         if (contact.getName() == null || contact.getEmail() == null) {
             throw new IllegalArgumentException("Name and Email are required");
         }
-        return contactRepository.save(contact);
+        contacts.add(contact); // save in memory instead of DB
+        return contact;
+    }
+
+    // List all contacts
+    @GetMapping("/all")
+    public List<Contact> getAllContacts() {
+        return contacts;
+    }
+
+    // Simple Contact class inside controller (can also make it a separate file)
+    public static class Contact {
+        private String name;
+        private String email;
+
+        public String getName() { return name; }
+        public void setName(String name) { this.name = name; }
+
+        public String getEmail() { return email; }
+        public void setEmail(String email) { this.email = email; }
     }
 }
