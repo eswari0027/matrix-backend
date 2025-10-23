@@ -2,7 +2,7 @@
 FROM maven:3.9.0-eclipse-temurin-17 AS build
 WORKDIR /app
 
-# Copy Maven wrapper and POM first (for caching)
+# Copy Maven wrapper and POM
 COPY mvnw mvnw.cmd pom.xml ./
 COPY .mvn .mvn
 
