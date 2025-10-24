@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Matrix Globe Tech</title>
+    <!-- CSS -->
+    <link rel="stylesheet" th:href="@{/matrixgloltech/style.css}">
+</head>
+
+<body class="bg-image">
+
+    <!-- Header -->
+    <div class="header">
+        <img th:src="@{/matrixgloltech/logo.png}" alt="Matrix Globe Tech Logo" class="logo">
+        <h1 th:text="${welcomeMessage}">Matrix Globe Tech</h1>
+        <p class="sub-header">Tool and Die Manufacturing Company</p>
+    </div>
+
+    <!-- Company Info Section -->
+    <section class="company-info">
+        <div class="company-content">
+            <h3>About Us</h3>
+            <p>
+                A Tool and Die Manufacturing Company specializes in designing, creating, and maintaining precision
+                tools, dies, molds, and machinery used in manufacturing processes. These tools are essential for
+                shaping,
+                cutting, and forming materials like metal, plastic, or composites to produce parts for various
+                industries,
+                including automotive, aerospace, electronics, and consumer goods.
+            </p>
+
+            <h3>Our Vision</h3>
+            <p>
+                To develop and become a nationally acclaimed Unit of Excellence in the area of Design, Development and
+                Manufacturing of Quality Tools, Moulds, Machining Components, Jigs and Fixtures and Skill development.
+            </p>
+
+            <h3>Our Mission</h3>
+            <p>
+                To continuously improve the skills in design, development and manufacturing processes of Quality Tools
+                and Components. And to optimize design and manufacturing using skilled labour and latest Methods and
+                Techniques to meet and satisfy your customer needs.
+            </p>
+
+            <h3>Business Type</h3>
+            <p>
+                Designers and Manufacturers of Press Tools, Moulds, Dies, Gauges, Precision Components, Machine Parts,
+                Welding Fixtures, Machining Fixtures and Jigs. Traders of standard components, press tool and mould
+                accessories.
+            </p>
+
+            <h3>Our Products</h3>
+            <ul>
+                <li>Press Tools</li>
+                <li>Moulds and Dies</li>
+                <li>Jigs and Fixtures</li>
+                <li>Metal Forming Punches and Dies</li>
+                <li>Blanking Punches and Dies</li>
+                <li>Fabricated Components</li>
+                <li>Chuck Jaws and Clamps</li>
+                <li>Welding Fixtures</li>
+            </ul>
+
+            <h3>Our Services</h3>
+            <ul>
+                <li>Press tools ECN corrections and Renovations</li>
+                <li>Moulds and Dies improvements and defect elimination</li>
+                <li>Design and Manufacturing of Gauges, Jigs, Fixtures, and Components</li>
+                <li>Reverse Engineering</li>
+            </ul>
+            <h3>Out Sourcing</h3>
+            <ul>
+                <li>Material Supply</li>
+                <li>Pre Machining</li>
+                <li>3D Scanning and 3D part model development</li>
+                <li>CNC Turning</li>
+                <li>Wire cut and Sparking</li>
+                <li>Cylindrical Grinding</li>
+                <li>Fabrications and welding</li>
+                <li>Heat treatment</li>
+                <li>Finishing Processes such as powder coating, plating and blackening</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Customers Section -->
+    <section class="customers">
+        <h3>Our Valuable Customers</h3>
+        <div class="customer-grid">
+            <div class="customer-item">
+                <img th:src="@{/matrixgloltech/customers/MYOUNG.png}" alt="MYOUNG SHIN INDIA AUTOMOTIVE PVT. LTD.">
+                <p>MYOUNG SHIN INDIA AUTOMOTIVE PVT. LTD.</p>
+            </div>
+            <div class="customer-item">
+                <img th:src="@{/matrixgloltech/customers/DAEJOO.png}" alt="DAEJOO AUTOMOTIVE INDIA PVT. LTD.">
+                <p>DAEJOO AUTOMOTIVE INDIA PVT. LTD.</p>
+            </div>
+            <div class="customer-item">
+                <img th:src="@{/matrixgloltech/customers/CAPARO.png}" alt="CAPARO ENGINEERING INDIA LIMITED">
+                <p>CAPARO ENGINEERING INDIA LIMITED</p>
+            </div>
+            <div class="customer-item">
+                <img th:src="@{/matrixgloltech/customers/CHAMUNDI.png}" alt="CHAMUNDI DIE CAST PVT. LTD.">
+                <p>CHAMUNDI DIE CAST PVT. LTD.</p>
+            </div>
+            <div class="customer-item">
+                <img th:src="@{/matrixgloltech/customers/ISUZU.png}" alt="ISUZU MOTORS INDIA PRIVATE LIMITED">
+                <p>ISUZU MOTORS INDIA PRIVATE LIMITED</p>
+            </div>
+
+            <div class="customer-item">
+                <img th:src="@{/matrixgloltech/customers/GLOBAL.png}" alt="M S GLOBAL INDIA AUTOMOTIVE PVT. LTD.">
+                <p>M S GLOBAL INDIA AUTOMOTIVE PVT. LTD.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-left">
+            <p>
+                <span class="icon">📍</span>
+                Address: Seethammal Street, near South Reddy Street,<br>
+                Athipet, Ambattur, Chennai, Tamil Nadu 600058
+            </p>
+            <iframe
+                src="https://www.google.com/maps?q=Seethammal+Street,+Athipet,+Ambattur,+Chennai,+Tamil+Nadu+600058&output=embed"
+                class="map">
+            </iframe>
+        </div>
+
+        <div class="footer-center" style="max-width:220px; text-align:center; margin-right:20px;">
+            <h3 style="margin-bottom:5px;">Products</h3>
+            <ul style="list-style-type:none; padding:0; line-height:1.5; margin:0;">
+                <li>Dies</li>
+                <li>Molds</li>
+                <li>Fixtures</li>
+                <li>Jaws</li>
+            </ul>
+        </div>
+
+        <div class="footer-right">
+            <p><span class="icon">✉️</span> Email: matrixglobetech@gmail.com</p>
+            <p><span class="icon">📞</span> Contact: 9786637878, 8940753868</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
