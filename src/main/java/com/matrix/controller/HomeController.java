@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class HomeController {
 
-    @GetMapping({"/", "/home"})
+    @GetMapping("/home")
     public String home(Model model) {
         model.addAttribute("welcomeMessage", "Matrix Globe Tech");
         return "index"; // must match template name in src/main/resources/templates/index.html
