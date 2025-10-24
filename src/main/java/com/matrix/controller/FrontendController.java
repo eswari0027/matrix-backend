@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class FrontendController {
 
-    @GetMapping({"/", "/Matrixglobetech"})
+    @GetMapping("/matrixglobetech") 
     public String home(Model model) {
         model.addAttribute("welcomeMessage", "Matrix Globe Tech");
         return "matrixgloltech/index";
