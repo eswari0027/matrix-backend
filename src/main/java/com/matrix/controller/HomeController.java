@@ -16,6 +16,7 @@ public class HomeController {
     // Handle "/home"
     @GetMapping("/home")
     public String home(Model model) {
+        model.addAttribute("companyName", "Matrix Globe Tech");
         // Add any model attributes if needed
         return "index";  // your main page template
     }
